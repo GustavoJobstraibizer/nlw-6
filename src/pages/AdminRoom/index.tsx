@@ -76,6 +76,7 @@ export function AdminRoom() {
         contentLabel="Remove question modal"
         className="modal"
         overlayClassName="modalOverlay"
+        onRequestClose={() => setIsOpen(false)}
       >
         <div className="modal-content">
           <svg
