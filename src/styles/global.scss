@@ -12,6 +12,7 @@
 body {
   background-color: var(--primary);
   color: var(--secondary);
+  transition: background-color 0.25s;
 
   &.dark {
     --primary: #333;
