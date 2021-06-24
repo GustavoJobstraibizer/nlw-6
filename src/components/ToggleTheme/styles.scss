@@ -1,0 +1,54 @@
+$dark-color: #2c2c2c;
+$light-color: #fff;
+
+.theme-dark {
+  background-color: $dark-color;
+}
+
+.theme-light {
+  background-color: $light-color;
+}
+
+.toggle-btn {
+  width: 4rem;
+  height: 30px;
+  border: 1px solid rgba(18, 163, 230, 0.6);
+  border-radius: 25px;
+  background-color: #2c2c2c;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+
+  &:after,
+  &:before {
+    top: 1px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "🌜";
+    left: 0;
+    font-size: 18px;
+  }
+
+  &:after {
+    content: "🌞";
+    right: 0;
+    font-size: 18px;
+  }
+
+  .toggle {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: #ddd;
+    z-index: 2;
+    top: 0;
+    left: -1px;
+    border-radius: 50%;
+    transition: transform 0.25s;
+    border: 2px solid #12a3e6;
+  }
+}

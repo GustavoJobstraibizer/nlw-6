@@ -19,7 +19,9 @@
         gap: 16px;
 
         button {
-          height: 40px;
+          &:not(.toggle-btn) {
+            height: 40px;
+          }
         }
       }
     }
@@ -37,7 +39,7 @@
       h1 {
         font-family: "Poppins", sans-serif;
         font-size: 24px;
-        color: #29292e;
+        color: var(--secondary);
       }
 
       span {
@@ -81,7 +83,7 @@
 
           span {
             margin-left: 8px;
-            color: #29292e;
+            color: var(--secondary);
             font-weight: 500;
             font-size: 14px;
           }

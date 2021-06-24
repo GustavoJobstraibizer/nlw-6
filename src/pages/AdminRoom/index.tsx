@@ -1,15 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
-import deleteImg from "../assets/images/delete.svg";
-import logoImg from "../assets/images/logo.svg";
-import { Button } from "../components/Button";
-import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
-import { useAuth } from "../hooks/useAuth";
-import { useRoom } from "../hooks/useRoom";
-import { database } from "../services/firebase";
-import "../styles/room.scss";
+import deleteImg from "../../assets/images/delete.svg";
+import { Header } from "../../components/Header";
+import { Question } from "../../components/Question";
+import { useAuth } from "../../hooks/useAuth";
+import { useRoom } from "../../hooks/useRoom";
+import { database } from "../../services/firebase";
+import "../../styles/room.scss";
 
 type RoomParams = {
   id: string;
@@ -23,14 +21,6 @@ export function AdminRoom() {
   const roomId = params.id;
 
   const { questions, title } = useRoom(roomId);
-
-  async function handleEndRoom() {
-    await database.ref(`rooms/${roomId}`).update({
-      endedAt: new Date(),
-    });
-
-    history.push("/");
-  }
 
   async function handleDeleteQuestion(questionId: string) {
     if (window.confirm("Tem certeza que deseja excluir essa pergunta?")) {
@@ -46,18 +36,7 @@ export function AdminRoom() {
 
   return (
     <div className="page-room">
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Logo Letmeask" />
-
-          <div>
-            <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>
-              Encerrar sala
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header showBtnEndRoom roomId={roomId} />
 
       <main className="content">
         <div className="room-title">

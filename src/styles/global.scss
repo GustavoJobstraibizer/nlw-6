@@ -4,9 +4,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #f8f8f8;
+  --secondary: #29292e;
+}
+
 body {
-  background-color: #f8f8f8;
-  color: #29292e;
+  background-color: var(--primary);
+  color: var(--secondary);
+
+  &.dark {
+    --primary: #333;
+    --secondary: #f8f8f8;
+
+    background-color: var(--primary);
+    color: var(--secondary);
+  }
 }
 
 body,
