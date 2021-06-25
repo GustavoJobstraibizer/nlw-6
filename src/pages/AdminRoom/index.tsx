@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
+import answerImg from "../../assets/images/answer.svg";
+import checkImg from "../../assets/images/check.svg";
 import deleteImg from "../../assets/images/delete.svg";
 import { Header } from "../../components/Header";
 import { Question } from "../../components/Question";
@@ -26,6 +28,8 @@ export function AdminRoom() {
 
   const { questions, title } = useRoom(roomId);
 
+  Modal.setAppElement("#root");
+
   async function handleConfirmDelete(questionId: string) {
     setQuestionId(questionId);
     setIsOpen(true);
@@ -34,6 +38,18 @@ export function AdminRoom() {
   async function handleDeleteQuestion() {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     setIsOpen(false);
+  }
+
+  async function handleCheckQuestionAsAnswered(questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isAnswered: true,
+    });
+  }
+
+  async function handleHighlightQuestion(questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isHighlighted: true,
+    });
   }
 
   useEffect(() => {
@@ -58,7 +74,27 @@ export function AdminRoom() {
               key={question.id}
               content={question.content}
               author={question.author}
+              isHighlighted={question.isHighlighted}
+              isAnswered={question.isAnswered}
             >
+              {!question.isAnswered && (
+                <>
+                  <button>
+                    <img
+                      src={checkImg}
+                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                      alt="Marcar pergunta como respondida"
+                    />
+                  </button>
+                  <button>
+                    <img
+                      src={answerImg}
+                      onClick={() => handleHighlightQuestion(question.id)}
+                      alt="Dar destaque à pergunta"
+                    />
+                  </button>
+                </>
+              )}
               <button>
                 <img
                   src={deleteImg}
