@@ -9,8 +9,8 @@ import { Room } from "./pages/Room";
 function App() {
   return (
     <BrowserRouter>
-      <AuthContextProvider>
-        <ThemeContextProvider>
+      <ThemeContextProvider>
+        <AuthContextProvider>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/rooms/new" exact component={NewRoom} />
@@ -18,8 +18,8 @@ function App() {
 
             <Route path="/admin/rooms/:id" component={AdminRoom} />
           </Switch>
-        </ThemeContextProvider>
-      </AuthContextProvider>
+        </AuthContextProvider>
+      </ThemeContextProvider>
     </BrowserRouter>
   );
 }
