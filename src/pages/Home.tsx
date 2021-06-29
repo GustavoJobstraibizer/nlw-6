@@ -47,6 +47,7 @@ export function Home() {
 
   return (
     <div id="page-auth">
+      <h1>{process.env.REACT_APP_API_KEY}</h1>
       <aside>
         <img
           src={ilustrationImg}
