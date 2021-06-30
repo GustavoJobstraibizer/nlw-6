@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import { useParams } from "react-router";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import answerImg from "../../assets/images/answer.svg";
 import checkImg from "../../assets/images/check.svg";
 import deleteImg from "../../assets/images/delete.svg";
