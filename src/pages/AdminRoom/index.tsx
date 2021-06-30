@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
@@ -52,11 +52,11 @@ export function AdminRoom() {
     });
   }
 
-  useEffect(() => {
-    if (!user) {
-      history.push("/");
-    }
-  }, [user, history]);
+  // useEffect(() => {
+  //   if (!user) {
+  //     history.push("/");
+  //   }
+  // }, [user, history]);
 
   return (
     <div className="page-room">
