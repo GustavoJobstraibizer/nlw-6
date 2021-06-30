@@ -5,6 +5,7 @@ import ilustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 import { Button } from "../components/Button";
 import { useAuth } from "../hooks/useAuth";
+import { database } from "../services/firebase";
 // import { database } from "../services/firebase";
 import "../styles/auth.scss";
 
@@ -28,21 +29,21 @@ export function Home() {
       return;
     }
 
-    // const roomRef = await database.ref(`rooms/${roomCode}`).get();
+    const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
-    // if (!roomRef.exists()) {
-    //   alert("Room does not exists");
-    //   return;
-    // }
+    if (!roomRef.exists()) {
+      alert("Room does not exists");
+      return;
+    }
 
-    // const { endedAt } = roomRef.val();
+    const { endedAt } = roomRef.val();
 
-    // if (endedAt) {
-    //   alert("Essa sala ja foi fechada");
-    //   return;
-    // }
+    if (endedAt) {
+      alert("Essa sala ja foi fechada");
+      return;
+    }
 
-    history.push(`/rooms/${123}`);
+    history.push(`/rooms/${roomCode}`);
   }
 
   return (
