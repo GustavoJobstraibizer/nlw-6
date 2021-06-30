@@ -1,12 +1,11 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import answerImg from "../../assets/images/answer.svg";
 import checkImg from "../../assets/images/check.svg";
 import deleteImg from "../../assets/images/delete.svg";
 import { Header } from "../../components/Header";
 import { Question } from "../../components/Question";
-import { useAuth } from "../../hooks/useAuth";
 import { useRoom } from "../../hooks/useRoom";
 import { database } from "../../services/firebase";
 import "../../styles/modal.scss";
@@ -17,8 +16,6 @@ type RoomParams = {
 };
 
 export function AdminRoom() {
-  const history = useHistory();
-  const { user } = useAuth();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [questionId, setQuestionId] = useState("");
   const params = useParams<RoomParams>();
