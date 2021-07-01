@@ -6,11 +6,11 @@ $light-color: #fff;
 }
 
 .theme-light {
-  background-color: $light-color;
+  background-color: var(--white);
 }
 
 .toggle-btn {
-  width: 4rem;
+  width: 70px;
   height: 30px;
   border: 1px solid rgba(18, 163, 230, 0.6);
   border-radius: 25px;

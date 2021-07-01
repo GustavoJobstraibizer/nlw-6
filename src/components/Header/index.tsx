@@ -4,6 +4,7 @@ import { database } from "../../services/firebase";
 import { Button } from "../Button";
 import { RoomCode } from "../RoomCode";
 import { ToggleTheme } from "../ToggleTheme";
+import "./styles.scss";
 
 type HeaderProps = {
   roomId: string;

@@ -12,7 +12,7 @@ export function ToggleTheme() {
           style={{
             transform:
               currentTheme === "dark"
-                ? "translateX(calc(4rem - 100%))"
+                ? "translateX(calc(70px - 100%))"
                 : "translateX(0)",
           }}
         ></span>

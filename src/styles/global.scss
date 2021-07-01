@@ -4,9 +4,30 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; // 10px
+}
+
 :root {
   --primary: #f8f8f8;
   --secondary: #29292e;
+
+  --white: #fff;
+  --black: #29292e;
+
+  --gray-50: #f8f8f8;
+  --gray-100: #dbdcdd;
+  --gray-200: #a8a8b3;
+  --gray-300: #737380;
+
+  --red-500: #e73f5d;
+  --red-600: #d73754;
+
+  --purple-500: #835afd;
+  --purple-600: #6f4bd8;
+
+  --pink-light: #d67ee2;
+  --pink-dark: #e559f9;
 }
 
 body {
