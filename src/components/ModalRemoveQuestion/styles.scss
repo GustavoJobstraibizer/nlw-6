@@ -4,7 +4,7 @@
   border-radius: 8px;
   margin: 0 auto;
   position: absolute;
-  background: #fff;
+  background: var(--white);
   width: 100%;
   padding: 65px 0;
   left: 0;
@@ -22,20 +22,29 @@
       height: 48px;
 
       path {
-        stroke: #e73f5d;
+        stroke: var(--red-500);
       }
     }
 
     h2 {
-      font: 700 24px "Poppins", sans-serif !important;
-      color: #29292e;
+      font: 700 2.4rem "Poppins", sans-serif;
+      color: var(--black);
       margin-bottom: 12px;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
 
     span {
-      font: 400 16px "Roboto", sans-serif;
-      color: #737380;
+      font: 400 1.6rem "Roboto", sans-serif;
+      color: var(--gray-300);
       margin-bottom: 40px;
+
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+        text-align: center;
+      }
     }
 
     .modal-actions {
@@ -50,7 +59,7 @@
         border: none;
         border-radius: 8px;
         padding: 13px 35px;
-        font: 500 16px "Roboto", sans-serif;
+        font: 500 1.6rem "Roboto", sans-serif;
         cursor: pointer;
         transition: filter 0.2s;
 
@@ -59,13 +68,13 @@
         }
 
         &.btn-cancel {
-          background: #dbdcdd;
+          background: var(--gray-100);
           color: #737380;
         }
 
         &.btn-delete {
-          background: #e73f5d;
-          color: #fff;
+          background: var(--red-500);
+          color: var(--white);
         }
       }
     }
