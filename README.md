@@ -65,7 +65,7 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
 - [x] Dark Mode
 - [ ] PWA
-- [ ] Responsive
+- [x] Responsive
 
 ## 📝 License
 
