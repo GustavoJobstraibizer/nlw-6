@@ -6,8 +6,8 @@
   aside {
     flex: 7;
 
-    background-color: #835afd;
-    color: #fff;
+    background-color: var(--purple-500);
+    color: var(--white);
 
     display: flex;
     flex-direction: column;
@@ -15,17 +15,25 @@
 
     padding: 120px 80px;
 
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     strong {
-      font: 700 36px "Poppins", sans-serif;
+      font: 700 3.6rem "Poppins", sans-serif;
       line-height: 42px;
       margin-top: 16px;
     }
 
     p {
-      font-size: 24px;
+      font-size: 2.4rem;
       line-height: 32px;
       margin-top: 16px;
-      color: #f8f8f8;
+      color: var(--gray-50);
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -47,14 +55,18 @@
     align-items: stretch;
     text-align: center;
 
-    > img {
+    > svg {
       align-self: center;
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 2.4rem;
       margin: 64px 0 24px;
       font-family: "Poppins", sans-serif;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
 
     form {
@@ -62,8 +74,8 @@
         height: 50px;
         border-radius: 8px;
         padding: 0 16px;
-        background: #fff;
-        border: 1px solid #a8a8b3;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
       }
 
       button {
@@ -78,11 +90,11 @@
 
     p {
       font-size: 14px;
-      color: #737380;
+      color: var(--gray-300);
       margin-top: 16px;
 
       a {
-        color: #e559f9;
+        color: var(--pink-dark);
       }
     }
   }
@@ -92,8 +104,8 @@
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #ea4335;
-    color: #fff;
+    background: var(--red-600);
+    color: var(--white);
 
     display: flex;
     justify-content: center;
@@ -115,7 +127,7 @@
 
   .separator {
     font-size: 14px;
-    color: #a8a8b3;
+    color: var(--gray-200);
 
     margin: 32px 0;
     display: flex;
@@ -125,7 +137,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: var(--gray-200);
       margin-right: 16px;
     }
 
@@ -133,7 +145,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: var(--gray-200);
       margin-left: 16px;
     }
   }

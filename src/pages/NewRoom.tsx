@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ilustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
 import { Button } from "../components/Button";
+import { Logo } from "../components/Logo";
 import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
 import "../styles/auth.scss";
@@ -42,7 +42,8 @@ export function NewRoom() {
 
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Logo Letmeask" />
+          {/* <img src={logoImg} alt="Logo Letmeask" /> */}
+          <Logo />
 
           <h2>Criar uma nova sala</h2>
 

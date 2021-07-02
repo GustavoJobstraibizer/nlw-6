@@ -15,7 +15,7 @@
       h1 {
         font-family: "Poppins", sans-serif;
         font-size: 2.4rem;
-        color: var(--secondary);
+        color: var(--dark);
 
         @media (max-width: 768px) {
           font-size: 1.6rem;
@@ -27,7 +27,7 @@
         background: var(--pink-dark);
         border-radius: 9999px;
         padding: 8px 16px;
-        color: var(--white);
+        color: var(--light);
         font-weight: 500;
         font-size: 1.4rem;
 
@@ -82,7 +82,7 @@
 
           span {
             margin-left: 8px;
-            color: var(--secondary);
+            color: var(--dark);
             font-weight: 500;
             font-size: 1.4rem;
           }
@@ -108,6 +108,45 @@
 
     .question-list {
       margin-top: 32px;
+    }
+
+    .whitout-questions {
+      max-width: 300px;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 150px;
+
+      @media (max-width: 768px) {
+        margin-top: 50px;
+      }
+
+      img {
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font: 600 1.8rem "Poppins", sans-serif;
+        color: var(--dark);
+        margin-bottom: 8px;
+
+        @media (max-width: 768px) {
+          font-size: 1.6rem;
+        }
+      }
+
+      p {
+        font: 400 1.4rem "Roboto", sans-serif;
+        color: var(--gray-300);
+        line-height: 21px;
+
+        @media (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 }

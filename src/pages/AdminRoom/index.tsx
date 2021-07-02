@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import answerImg from "../../assets/images/answer.svg";
 import checkImg from "../../assets/images/check.svg";
 import deleteImg from "../../assets/images/delete.svg";
+import emptyLogo from "../../assets/images/empty-questions.svg";
 import { Header } from "../../components/Header";
 import { Question } from "../../components/Question";
 import { useRoom } from "../../hooks/useRoom";
@@ -64,43 +65,57 @@ export function AdminRoom() {
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
-        <div className="question-list">
-          {questions.map((question) => (
-            <Question
-              key={question.id}
-              content={question.content}
-              author={question.author}
-              isHighlighted={question.isHighlighted}
-              isAnswered={question.isAnswered}
-            >
-              {!question.isAnswered && (
-                <>
-                  <button>
-                    <img
-                      src={checkImg}
-                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                      alt="Marcar pergunta como respondida"
-                    />
-                  </button>
-                  <button>
-                    <img
-                      src={answerImg}
-                      onClick={() => handleHighlightQuestion(question.id)}
-                      alt="Dar destaque à pergunta"
-                    />
-                  </button>
-                </>
-              )}
-              <button>
-                <img
-                  src={deleteImg}
-                  onClick={() => handleConfirmDelete(question.id)}
-                  alt="Remover questão"
-                />
-              </button>
-            </Question>
-          ))}
-        </div>
+        {questions.length > 0 ? (
+          <div className="question-list">
+            {questions.map((question) => (
+              <Question
+                key={question.id}
+                content={question.content}
+                author={question.author}
+                isHighlighted={question.isHighlighted}
+                isAnswered={question.isAnswered}
+              >
+                {!question.isAnswered && (
+                  <>
+                    <button>
+                      <img
+                        src={checkImg}
+                        onClick={() =>
+                          handleCheckQuestionAsAnswered(question.id)
+                        }
+                        alt="Marcar pergunta como respondida"
+                      />
+                    </button>
+                    <button>
+                      <img
+                        src={answerImg}
+                        onClick={() => handleHighlightQuestion(question.id)}
+                        alt="Dar destaque à pergunta"
+                      />
+                    </button>
+                  </>
+                )}
+                <button>
+                  <img
+                    src={deleteImg}
+                    onClick={() => handleConfirmDelete(question.id)}
+                    alt="Remover questão"
+                  />
+                </button>
+              </Question>
+            ))}
+          </div>
+        ) : (
+          <div className="whitout-questions">
+            <img src={emptyLogo} alt="Icone sala sem questões" />
+
+            <h1>Nenhuma pergunta por aqui...</h1>
+            <p>
+              Envie o código desta sala para seus amigos e comece a responder
+              perguntas!
+            </p>
+          </div>
+        )}
       </main>
 
       <Modal

@@ -15,6 +15,9 @@ html {
   --white: #fff;
   --black: #29292e;
 
+  --light: var(--white);
+  --dark: var(--black);
+
   --gray-50: #f8f8f8;
   --gray-100: #dbdcdd;
   --gray-200: #a8a8b3;
@@ -31,16 +34,16 @@ html {
 }
 
 body {
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: var(--light);
+  color: var(--dark);
   transition: background-color 0.25s;
 
   &.dark {
-    --primary: #333;
-    --secondary: #f8f8f8;
+    --light: #333;
+    --dark: #f8f8f8;
 
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--light);
+    color: var(--dark);
   }
 }
 

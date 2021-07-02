@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
-import logoImg from "../../assets/images/logo.svg";
 import { database } from "../../services/firebase";
 import { Button } from "../Button";
+import { Logo } from "../Logo";
 import { RoomCode } from "../RoomCode";
 import { ToggleTheme } from "../ToggleTheme";
 import "./styles.scss";
@@ -25,7 +25,13 @@ export function Header({ roomId, showBtnEndRoom = false }: HeaderProps) {
   return (
     <header>
       <div className="content">
-        <img src={logoImg} alt="Logo Letmeask" />
+        <div className="header-content-logo">
+          <Logo />
+
+          <div className="toggle-theme-mobile">
+            <ToggleTheme />
+          </div>
+        </div>
 
         <div>
           <RoomCode code={roomId} />
@@ -34,7 +40,10 @@ export function Header({ roomId, showBtnEndRoom = false }: HeaderProps) {
               Encerrar sala
             </Button>
           )}
-          <ToggleTheme />
+
+          <div className="toggle-theme-desktop">
+            <ToggleTheme />
+          </div>
         </div>
       </div>
     </header>
