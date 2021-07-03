@@ -7,8 +7,7 @@ var urlsToCache = [
   "/static/js/1.chunk.js",
   "/static/js/0.chunk.js",
   "/favicon.ico",
-  "/css?family=Poppins",
-  "/css?family=Roboto",
+  "/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap",
 ];
 
 self.addEventListener("install", function (event) {
