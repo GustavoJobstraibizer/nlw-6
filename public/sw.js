@@ -6,7 +6,7 @@ var urlsToCache = [
   "/static/js/main.chunk.js",
   "/static/js/1.chunk.js",
   "/static/js/0.chunk.js",
-  "/favicon.ico",
+  "/react.png",
   "/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap",
 ];
 
