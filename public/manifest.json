@@ -3,8 +3,7 @@
   "short_name": "LetmeAsk",
   "theme_color": "#835afd",
   "background_color": "#835afd",
-  "display": "browser",
-  "scope": "/",
+  "display": "standalone",
   "start_url": "./",
   "icons": [
     {
