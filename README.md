@@ -64,7 +64,8 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 ## ✨ Features
 
 - [x] Dark Mode
-- [ ] PWA
+- [x] PWA
+- [x] Storybook
 - [x] Responsive
 
 ## 📝 License
