@@ -67,6 +67,7 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 - [x] PWA
 - [x] Storybook
 - [x] Responsive
+- [ ] Tests
 
 ## 📝 License
 
