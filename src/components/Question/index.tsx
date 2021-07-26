@@ -22,6 +22,7 @@ export function Question({
 }: QuestionProps) {
   return (
     <div
+      data-testid="question"
       className={cx(
         "question",
         { answered: isAnswered },

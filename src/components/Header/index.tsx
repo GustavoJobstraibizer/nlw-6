@@ -23,7 +23,7 @@ export function Header({ roomId, showBtnEndRoom = false }: HeaderProps) {
   }
 
   return (
-    <header>
+    <header data-testid="header">
       <div className="content">
         <div className="header-content-logo">
           <Logo />

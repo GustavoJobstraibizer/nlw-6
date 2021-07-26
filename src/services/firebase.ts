@@ -1,3 +1,4 @@
+import { initializeTestApp } from '@firebase/rules-unit-testing';
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/database";
@@ -12,9 +13,25 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
+const getFirebaseApp = () => {
+  if (process.env.DEBUG_TEST) {
+    //if (firebaseTesting.apps().length) return firebaseTesting.apps()[0];
+    return initializeTestApp({
+      auth: { uid: 'gustavo', email: 'gustavojobs.dev@gmail.com' },
+      projectId: firebaseConfig.projectId,
+      databaseName: 'my-database',
+      ...firebaseConfig
+    });
+  } else {
+    if (firebase.apps.length) return firebase.apps[0];
+    return firebase.initializeApp(firebaseConfig);
+  }
+};
 
-const auth = firebase.auth();
-const database = firebase.database();
+// firebase.initializeApp(firebaseConfig);
 
-export { firebase, auth, database };
+const firebaseApp = getFirebaseApp();
+const auth = firebaseApp.auth();
+const database = firebaseApp.database();
+
+export { firebase, firebaseApp, auth, database };
